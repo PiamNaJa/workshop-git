@@ -10,15 +10,32 @@ import {
   TitleNoMargin
 } from '@containers/bill/style'
 import { Col, Input, Row, Table } from 'antd'
+import { Text } from '@style/index'
 import { ColumnsType } from 'antd/lib/table'
 import { ReactElement } from 'react'
 
 const BillContainer = (): ReactElement => {
   const columns: ColumnsType<Product> = [
     {
+      title: 'จำนวน',
+      dataIndex: 'quantity',
+      key: 'name'
+    },
+    {
       title: 'รายการ',
       dataIndex: 'name',
       key: 'name'
+    },
+    {
+      title: 'หน่วยละ',
+      dataIndex: 'price',
+      key: 'name'
+    },
+    {
+      title: 'จำนวนเงิน',
+      key: 'name',render:(data)=> {
+        return <Text>{data.price * data.quantity}</Text>
+      }
     }
   ]
 

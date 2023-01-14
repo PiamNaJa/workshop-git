@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface Product {
   name: string,
   quantity: number,
